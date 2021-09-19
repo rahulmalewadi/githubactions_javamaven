@@ -2,6 +2,9 @@ name: "Snyk Maven"
 
 
 on: [push]
+jobs:
+  security:
+    runs-on: ubuntu-latest
 inputs:
   command:
     description: "Which Snyk command to run, defaults to test"
@@ -11,13 +14,8 @@ inputs:
   json:
     description: "Output a snyk.json file with results if running the test command"
     default: false
-runs:
-  using: "docker"
-  image: "docker://snyk/snyk:maven"
+
   env:
     SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
     SNYK_INTEGRATION_VERSION: maven
-  args:
-  - snyk
-  - ${{ inputs.command }}
-  - ${{ inputs.args }} 
+  
