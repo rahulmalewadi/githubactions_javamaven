@@ -1,6 +1,6 @@
 name: snyk-test
 
-on: [push]
+on: [push] 
 
 jobs:
   security:
