@@ -16,10 +16,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - uses: snyk/actions/setup@master
-    - name: snyk-test
-    - run: snyk test
-    env:
-      SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
+    
     
 
 
