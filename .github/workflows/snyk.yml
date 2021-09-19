@@ -1,25 +1,16 @@
-name: "Snyk Maven"
-description: "Check your Maven application for vulnerabilties using Snyk"
-author: "Gareth Rushgrove"
-branding:
-  icon: "alert-triangle"
-  color: "yellow"
-inputs:
-  command:
-    description: "Which Snyk command to run, defaults to test"
-    default: test
-  args:
-    description: "Additional arguments to pass to Snyk"
-  json:
-    description: "Output a snyk.json file with results if running the test command"
-    default: false
-runs:
-  using: "docker"
-  image: "docker://snyk/snyk:maven"
-  env:
-    SNYK_INTEGRATION_NAME: GITHUB_ACTIONS
-    SNYK_INTEGRATION_VERSION: maven
-  args:
-  - snyk
-  - ${{ inputs.command }}
-  - ${{ inputs.args }} 
+name: snyk-test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: snyk/actions/setup@master
+    - name: snyk-test
+    - run: snyk test
+    env:
+      SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
+    
