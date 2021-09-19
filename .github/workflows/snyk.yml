@@ -10,6 +10,7 @@ jobs:
     - uses: snyk/actions/setup@master
     - name: snyk-test
       uses: snyk/actions/maven-3-jdk-11@master
+    - run: snyk auth ${{SNYK_TOKEN}}
     - run: snyk test
     env:
       SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
