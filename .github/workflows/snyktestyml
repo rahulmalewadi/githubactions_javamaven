@@ -8,11 +8,11 @@ jobs:
 
     steps:
     - uses: snyk/actions/setup@master
-    - run: snyk auth d3a8db47-e88b-428c-a4be-2fc1e31d0e70
+   
     
     - name: snyk-test
       uses: snyk/actions/maven-3-jdk-11@master
-    
+    - run: snyk auth d3a8db47-e88b-428c-a4be-2fc1e31d0e70
     - run: snyk test
     env:
       SNYK_TOKEN: d3a8db47-e88b-428c-a4be-2fc1e31d0e70
