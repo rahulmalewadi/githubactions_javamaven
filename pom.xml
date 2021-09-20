@@ -7,9 +7,7 @@
 	<version>3.0-SNAPSHOT</version>
 	<name>spring3 mvc maven</name>
 	
-	<name>Snyk Maven Plugin</name>
-        <description>Tests and monitors your Maven dependencies for vulnerabilities. This plugin is officially maintained by Snyk.io</description>
-        <url>https://snyk.io</url>
+	
 
 	<properties>
 		<jdk.version>1.6</jdk.version>
