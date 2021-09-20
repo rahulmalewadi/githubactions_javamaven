@@ -13,5 +13,7 @@ jobs:
         run: snyk test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_CLI_EXECUTABLE: /usr/local/bin/snyk
+          SNYK_DOWNLOAD_DESTINATION: "downloads/snyk"
         with:
           args: --severity-threshold=high
