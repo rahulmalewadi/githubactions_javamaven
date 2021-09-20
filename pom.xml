@@ -6,6 +6,14 @@
 	<packaging>war</packaging>
 	<version>3.0-SNAPSHOT</version>
 	<name>spring3 mvc maven</name>
+       
+	<distributionManagement>
+            <repository>
+                <id>github</id>
+                <name>GitHub rahulmalewadi Apache Maven Packages</name>
+                <url>https://maven.pkg.github.com/rahulmalewadi/githubactions_javamaven</url>
+            </repository>
+        </distributionManagement>
 	
 	
 
