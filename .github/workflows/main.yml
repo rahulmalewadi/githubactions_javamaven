@@ -15,7 +15,8 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - uses: snyk/actions/setup@master
+    - name: tomcat-deploy
+      run: curl -v -u admin:admin -T /home/runner/work/githubactions_javamaven/githubactions_javamaven/target/spring3-mvc-maven-xml-hello-world-3.0-SNAPSHOT.war 'http://34.207.113.63:8090//manager/text/deploy?path=/springapp'
     
     
 
