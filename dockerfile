@@ -1,8 +1,7 @@
-FROM openjdk:8-jre-alpine
-
+FROM openjdk:8-jdk-alpine
 EXPOSE 8080
-
-COPY ./build/libs/my-app-1.0-SNAPSHOT.war /usr/app/
-WORKDIR /usr/app
-
-ENTRYPOINT ["java", "-war", "my-app-1.0-SNAPSHOT.jar"]
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+ARG WAR_FILE=target/*.war
+COPY ${WAR_FILE} app.war
+ENTRYPOINT ["java","-war","/app.war"]
