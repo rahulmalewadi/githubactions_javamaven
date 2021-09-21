@@ -20,7 +20,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: springapp/next
+        repository: springrepo/next
         tags: latest, ${{ github.run_number }}
 
   
