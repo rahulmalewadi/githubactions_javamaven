@@ -20,7 +20,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: myrepo101/webnext
+        repository: springapp/next
         tags: latest, ${{ github.run_number }}
 
   
