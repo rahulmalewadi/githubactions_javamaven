@@ -15,9 +15,15 @@ jobs:
         java-version: 1.8
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: tomcat-deploy
-      run: curl -v -u tomcat:s3cret -T /home/runner/work/githubactions_javamaven/githubactions_javamaven/target/spring3-mvc-maven-xml-hello-world-3.0-SNAPSHOT.war 'http://54.205.158.43:8080//manager/deploy?path=/myweb_dev_action&update=true'
-    
+    - name: Push to Docker Hub
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: myrepo101/webnext
+        tags: latest, ${{ github.run_number }}
+
+  
     
 
 
