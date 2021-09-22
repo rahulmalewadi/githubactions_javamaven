@@ -5,6 +5,3 @@ USER spring:spring
 ARG WAR_FILE=target/*.war
 COPY ${WAR_FILE} app.war
 ENTRYPOINT ["java","-war","/app.war"]
-FROM tomcat:8.5.47-jdk8-openjdk
-  
-  COPY app.war /usr/local/tomcat/webapps
