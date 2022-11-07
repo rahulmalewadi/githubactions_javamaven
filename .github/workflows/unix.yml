@@ -32,7 +32,7 @@ jobs:
       - name: Run a one-line script
         run: |
           echo "input"
-          if [ "${{ sgithub.event.inputs.binary_release_included }}" == 'true' ]; then
+          if [ "${{ github.event.inputs.binary_release_included }}" == 'true' ]; then
                   echo "BINARIES REPO REQUIRE    : No"
                 else
                  echo "req: true"
