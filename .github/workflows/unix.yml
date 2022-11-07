@@ -10,7 +10,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:
-      branch:
+      binary_release_included:
+        description: select if aslx-binary release is also included
+        type: boolean
+        required: true
       
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -27,8 +30,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
-
+        run: |
+          echo "input"
+          if [ "${{ sgithub.event.inputs.binary_release_included }}" == 'true' ]; then
+                  echo "BINARIES REPO REQUIRE    : No"
+                else
+                 echo "req: true"
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
