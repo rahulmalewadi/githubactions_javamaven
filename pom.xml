@@ -19,7 +19,7 @@
 
 	<properties>
 		<jdk.version>1.6</jdk.version>
-		<spring.version>5.2.19.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<jstl.version>1.2</jstl.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
